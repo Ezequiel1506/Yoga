@@ -20,6 +20,7 @@ body {
     padding: 20px;
     position: fixed;
     overflow-y: auto;
+    transition: transform 0.3s ease;
 }
 
 .sidebar h2 {
@@ -106,92 +107,69 @@ iframe {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Descripción del video */
-.video-description h3 {
-    margin-bottom: 15px; /* Aquí se agrega el espacio entre el título y la descripción */
-}
-
-.video-description p {
-    font-size: 16px;
-    color: #7f8c8d;
-}
-
-
 /* Estilos para dispositivos pequeños (como celulares) */
 @media (max-width: 768px) {
-    /* Menú lateral */
+    /* Menú lateral en pantallas pequeñas */
     .sidebar {
-        width: 100%; /* Hace que el menú ocupe todo el ancho */
-        position: relative; /* Cambia de fijo a relativo para que se acomode */
-        height: auto; /* No debería tener un alto fijo */
-        padding: 10px; /* Reduce el padding para que no se vea tan lleno */
+        width: 250px;
+        position: absolute;
+        transform: translateX(-100%); /* Oculta el menú inicialmente */
+        height: 100%;
+    }
+
+    .sidebar.open {
+        transform: translateX(0); /* Muestra el menú cuando se abre */
     }
 
     .sidebar h2 {
-        font-size: 1.5rem; /* Ajusta el tamaño del título */
+        font-size: 1.5rem;
         text-align: left;
     }
 
-    /* Estilo del buscador */
     .search-box {
-        width: 100%; /* Asegura que el buscador ocupe todo el ancho disponible */
-        font-size: 14px; /* Ajusta el tamaño del texto */
-        padding: 8px;
+        font-size: 14px;
     }
 
-    /* Estilos del menú */
-    .sidebar ul li {
-        padding: 10px; /* Ajusta el tamaño del padding para pantallas pequeñas */
-    }
-
-    /* Submenú */
-    .submenu {
-        padding-left: 10px; /* Reduce el padding izquierdo */
-    }
-
-    /* Contenido */
     .content {
-        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-        padding: 15px; /* Reduce el padding para hacer más espacio */
-        width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
-        text-align: left; /* Alinea el texto a la izquierda */
+        margin-left: 0;
+        padding: 15px;
+        text-align: left;
     }
 
     iframe {
-        width: 100%; /* Hace que el video ocupe todo el ancho disponible */
-        height: 200px; /* Ajusta la altura para pantallas más pequeñas */
+        height: 200px;
     }
 
-    /* Video Descripción */
-    .video-description {
-        padding: 15px 0; /* Añade algo de espacio entre el título y la descripción */
-    }
-
-    .video-description h3 {
-        margin-bottom: 10px; /* Ajusta el espacio debajo del título */
-    }
-
-    .video-description p {
-        font-size: 14px; /* Reduce el tamaño de la fuente de la descripción */
+    /* Mostrar el menú al hacer clic en el ícono */
+    .menu-toggle {
+        display: block;
+        background-color: #2c3e50;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
     }
 }
 
-/* Estilos para pantallas muy pequeñas (como celulares en modo retrato) */
+/* Estilos para pantallas aún más pequeñas (teléfonos en modo retrato) */
 @media (max-width: 480px) {
     .sidebar h2 {
-        font-size: 1.2rem; /* Más pequeño en pantallas aún más pequeñas */
+        font-size: 1.2rem;
     }
 
     .search-box {
-        font-size: 12px; /* Asegura que el tamaño del texto sea adecuado */
+        font-size: 12px;
     }
 
     .content {
-        padding: 10px; /* Reduce aún más el padding */
+        padding: 10px;
     }
 
     iframe {
-        height: 180px; /* Reduce la altura del video */
+        height: 180px;
     }
 }
-
