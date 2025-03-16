@@ -87,6 +87,7 @@
             margin-left: 320px;
             padding: 30px;
             width: 100%;
+            text-align: center;
         }
 
         h1 {
@@ -98,14 +99,20 @@
         }
 
         /* Video */
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
+        .video-container {
+            display: none;
             margin-top: 20px;
+        }
+
+        iframe {
+            max-width: 640px;
+            width: 100%;
+            height: 360px;
+            border: none;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
     </style>
 </head>
 <body>
@@ -117,17 +124,17 @@
         <!-- Buscador -->
         <input type="text" class="search-box" id="search" placeholder="Buscar postura..." onkeyup="searchPosture()">
 
-        <ul>
+        <ul id="menuList">
             <li onclick="toggleMenu('menu1')">🌿 Posturas de Pie</li>
             <ul id="menu1" class="submenu">
-                <li onclick="showVideo('1WHfqJg6rq-cyVSKtCiJP9hs9n5-rRwhB')">🔹 Tadasana</li>
-                <li onclick="showVideo('1jS7krtcVYoUOvZMslBBt-aGrrnNqJudN')">🔹 Virabhadrasana</li>
+                <li class="postura" onclick="showVideo('1WHfqJg6rq-cyVSKtCiJP9hs9n5-rRwhB')">🔹 Tadasana</li>
+                <li class="postura" onclick="showVideo('1jS7krtcVYoUOvZMslBBt-aGrrnNqJudN')">🔹 Virabhadrasana</li>
             </ul>
 
             <li onclick="toggleMenu('menu2')">🧘‍♂️ Posturas Sentadas</li>
             <ul id="menu2" class="submenu">
-                <li onclick="showVideo('1DntOc-K90MjVpoErcG0XOXyJvgqF8X78')">🔹 Padmasana</li>
-                <li onclick="showVideo('1pzfsW_q7TZZEDSXyyLFlqgsXtQUpDUNP')">🔹 Sukhasana</li>
+                <li class="postura" onclick="showVideo('1DntOc-K90MjVpoErcG0XOXyJvgqF8X78')">🔹 Padmasana</li>
+                <li class="postura" onclick="showVideo('1pzfsW_q7TZZEDSXyyLFlqgsXtQUpDUNP')">🔹 Sukhasana</li>
             </ul>
         </ul>
     </div>
@@ -136,7 +143,9 @@
     <div class="content">
         <h1>Bienvenido a las Clases de Yoga</h1>
         <p>Selecciona una postura en el menú o usa el buscador.</p>
-        <iframe id="videoFrame" src="" allowfullscreen></iframe>
+        <div class="video-container" id="videoContainer">
+            <iframe id="videoFrame" src="" allowfullscreen></iframe>
+        </div>
     </div>
 
     <script>
@@ -146,23 +155,26 @@
             submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
         }
 
-        // Cambiar el video en el iframe
+        // Cambiar el video en el iframe y mostrarlo
         function showVideo(videoID) {
             let iframe = document.getElementById("videoFrame");
+            let videoContainer = document.getElementById("videoContainer");
+
             iframe.src = `https://drive.google.com/file/d/${videoID}/preview`;
+            videoContainer.style.display = "block";
         }
 
-        // Buscador de posturas
+        // Buscador de posturas mejorado
         function searchPosture() {
             let input = document.getElementById("search").value.toLowerCase();
-            let items = document.querySelectorAll(".submenu li");
+            let posturas = document.querySelectorAll(".postura");
 
-            items.forEach(item => {
-                let text = item.textContent.toLowerCase();
+            posturas.forEach(postura => {
+                let text = postura.textContent.toLowerCase();
                 if (text.includes(input)) {
-                    item.style.display = "block";
+                    postura.style.display = "block";
                 } else {
-                    item.style.display = "none";
+                    postura.style.display = "none";
                 }
             });
         }
