@@ -21,6 +21,11 @@ body {
     position: fixed;
     overflow-y: auto;
     transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Oculta el menú inicialmente en móviles */
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Muestra el menú cuando se abre */
 }
 
 .sidebar h2 {
