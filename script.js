@@ -16,13 +16,13 @@ const videos = [
         title: "Vinyasa: Banco - Plano Inclinado",
         category: "Sabado 15 de Marzo 2025",
         videoID: "1DntOc-K90MjVpoErcG0XOXyJvgqF8X78",
-        description: "Transicióm de Banco a Plano Inclinado"
+        description: "Transición de Banco a Plano Inclinado"
     },
     {
         title: "Vinyasa: Banco - Plano Inclinado 2 ",
         category: "Sabado 15 de Marzo 2025",
         videoID: "1pzfsW_q7TZZEDSXyyLFlqgsXtQUpDUNP",
-        description: "Transicióm de Banco a Plano Inclinado mas detallado con explicacion de los pesos corporales. "
+        description: "Transición de Banco a Plano Inclinado mas detallado con explicacion de los pesos corporales. "
     }
 ];
 
