@@ -122,10 +122,6 @@ function searchPosture() {
     });
 }
 
-function toggleSidebar() {
-    let sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('open');
-}
 
 // Llamar a la función para generar el menú cuando cargue la página
 window.onload = generateMenu;
