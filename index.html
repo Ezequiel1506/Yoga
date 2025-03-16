@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases de Yoga</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; margin: 0; }
+        .sidebar { width: 250px; background: #2c3e50; color: white; padding: 20px; height: 100vh; position: fixed; overflow-y: auto; }
+        .sidebar h2 { text-align: center; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { margin: 10px 0; cursor: pointer; }
+        .content { margin-left: 270px; padding: 20px; flex-grow: 1; }
+        iframe { width: 80%; max-width: 560px; height: 315px; }
+        .tab-content { display: none; }
+        .active { display: block; }
+    </style>
+    <script>
+        function showTab(tabId) {
+            let contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Clases de Yoga</h2>
+        <ul>
+            <li onclick="showTab('asanas-pie')">Asanas de Pie</li>
+            <li onclick="showTab('asanas-sentadas')">Asanas Sentadas</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="asanas-pie" class="tab-content active">
+            <h2>Asanas de Pie</h2>
+            <iframe src="https://drive.google.com/file/d/19zqa22UTKUqwTub7y5_dWz8e1V9iAQx1/preview" allowfullscreen></iframe>
+            <p>Virabhadrasana I (Guerrero I)</p>
+        </div>
+        <div id="asanas-sentadas" class="tab-content">
+            <h2>Asanas Sentadas</h2>
+            <iframe src="https://drive.google.com/file/d/1WHfqJg6rq-cyVSKtCiJP9hs9n5-rRwhB/preview" allowfullscreen></iframe>
+            <p>Padmasana (Postura del Loto)</p>
+        </div>
+    </div>
+</body>
+</html>
