@@ -10,42 +10,30 @@
 
     <!-- Menú lateral -->
     <div class="sidebar">
-        <h2>Videos de Yoga 🧘‍♀️</h2>
+        <h2>Clases de Yoga 🧘‍♀️</h2>
 
         <!-- Buscador -->
         <input type="text" class="search-box" id="search" placeholder="Buscar postura..." onkeyup="searchPosture()">
 
-        <ul id="menuList">
-            <li onclick="toggleMenu('menu1')">🌿 Posturas de Pie</li>
-            <ul id="menu1" class="submenu">
-                <li class="postura" onclick="showVideo('1WHfqJg6rq-cyVSKtCiJP9hs9n5-rRwhB')">🔹 Tadasana</li>
-                <li class="postura" onclick="showVideo('1jS7krtcVYoUOvZMslBBt-aGrrnNqJudN')">🔹 Virabhadrasana</li>
-            </ul>
-
-            <li onclick="toggleMenu('menu2')">🧘‍♂️ Posturas Sentadas</li>
-            <ul id="menu2" class="submenu">
-                <li class="postura" onclick="showVideo('1DntOc-K90MjVpoErcG0XOXyJvgqF8X78')">🔹 Padmasana</li>
-                <li class="postura" onclick="showVideo('1pzfsW_q7TZZEDSXyyLFlqgsXtQUpDUNP')">🔹 Sukhasana</li>
-            </ul>
-        </ul>
+        <ul id="menuList"></ul> <!-- Este será el contenedor dinámico del menú -->
     </div>
 
     <!-- Contenido principal -->
-<!-- Contenido principal -->
-<div class="content">
-    <h1>Bienvenido a las Clases de Yoga</h1>
-    <p>Selecciona una postura en el menú o usa el buscador.</p>
-    
-    <!-- Contenedor del video -->
-    <div class="video-container" id="videoContainer">
-        <iframe id="videoFrame" src="" allowfullscreen></iframe>
+    <div class="content">
+        <h1>Bienvenido a las Clases de Yoga</h1>
+        <p>Selecciona una postura en el menú o usa el buscador.</p>
+        
+        <div class="video-container" id="videoContainer">
+            <iframe id="videoFrame" src="" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-description">
+            <h3 id="videoTitle"></h3>
+            <p id="videoDescription"></p>
+        </div>
     </div>
 
-    <!-- Descripción del video -->
-    <div class="video-description">
-        <h3 id="videoTitle"></h3>
-        <p id="videoDescription"></p>
-    </div>
-</div>
+    <script src="script.js"></script>
+
 </body>
 </html>
