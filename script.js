@@ -1,28 +1,28 @@
 // Datos de los videos
 const videos = [
     {
-        title: "Tadasana",
-        category: "Posturas de Pie",
+        title: " Vinyasa: Uttanasana - Malasana",
+        category: "Sabado 15 de Marzo 2025",
         videoID: "1WHfqJg6rq-cyVSKtCiJP9hs9n5-rRwhB",
-        description: "Postura de montaña, ideal para alinear el cuerpo."
+        description: "Transición de Uttanasana a Malasana"
     },
     {
-        title: "Virabhadrasana",
-        category: "Posturas de Pie",
+        title: "Vinyasa: Tadasana - Urdvha Hastahasa - Utkatasana  - Uttanasana - Malasana Chandrasana - Banco - Plano inclinado",
+        category: "Sabado 15 de Marzo 2025",
         videoID: "1jS7krtcVYoUOvZMslBBt-aGrrnNqJudN",
-        description: "Postura del guerrero, fortalece piernas y brazos."
+        description: "Transición desde Tadasana hasta llegar a Plano Inclinado"
     },
     {
-        title: "Padmasana",
-        category: "Posturas Sentadas",
+        title: "Vinyasa: Banco - Plano Inclinado",
+        category: "Sabado 15 de Marzo 2025",
         videoID: "1DntOc-K90MjVpoErcG0XOXyJvgqF8X78",
-        description: "Postura de loto, ideal para meditar."
+        description: "Transicióm de Banco a Plano Inclinado"
     },
     {
-        title: "Sukhasana",
-        category: "Posturas Sentadas",
+        title: "Vinyasa: Banco - Plano Inclinado 2 ",
+        category: "Sabado 15 de Marzo 2025",
         videoID: "1pzfsW_q7TZZEDSXyyLFlqgsXtQUpDUNP",
-        description: "Postura fácil de sentarse, ideal para la meditación."
+        description: "Transicióm de Banco a Plano Inclinado mas detallado con explicacion de los pesos corporales. "
     }
 ];
 
