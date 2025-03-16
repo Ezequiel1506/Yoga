@@ -66,11 +66,6 @@ function generateMenu() {
 }
 
 // Mostrar u ocultar submenús
-function toggleMenu() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("open");
-}
-
 function toggleMenu(id) {
     let submenu = document.getElementById(id);
     submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
@@ -126,7 +121,6 @@ function searchPosture() {
         }
     });
 }
-
 
 // Llamar a la función para generar el menú cuando cargue la página
 window.onload = generateMenu;
