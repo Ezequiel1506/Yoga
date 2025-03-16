@@ -115,3 +115,83 @@ iframe {
     font-size: 16px;
     color: #7f8c8d;
 }
+
+
+/* Estilos para dispositivos pequeños (como celulares) */
+@media (max-width: 768px) {
+    /* Menú lateral */
+    .sidebar {
+        width: 100%; /* Hace que el menú ocupe todo el ancho */
+        position: relative; /* Cambia de fijo a relativo para que se acomode */
+        height: auto; /* No debería tener un alto fijo */
+        padding: 10px; /* Reduce el padding para que no se vea tan lleno */
+    }
+
+    .sidebar h2 {
+        font-size: 1.5rem; /* Ajusta el tamaño del título */
+        text-align: left;
+    }
+
+    /* Estilo del buscador */
+    .search-box {
+        width: 100%; /* Asegura que el buscador ocupe todo el ancho disponible */
+        font-size: 14px; /* Ajusta el tamaño del texto */
+        padding: 8px;
+    }
+
+    /* Estilos del menú */
+    .sidebar ul li {
+        padding: 10px; /* Ajusta el tamaño del padding para pantallas pequeñas */
+    }
+
+    /* Submenú */
+    .submenu {
+        padding-left: 10px; /* Reduce el padding izquierdo */
+    }
+
+    /* Contenido */
+    .content {
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+        padding: 15px; /* Reduce el padding para hacer más espacio */
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+
+    iframe {
+        width: 100%; /* Hace que el video ocupe todo el ancho disponible */
+        height: 200px; /* Ajusta la altura para pantallas más pequeñas */
+    }
+
+    /* Video Descripción */
+    .video-description {
+        padding: 15px 0; /* Añade algo de espacio entre el título y la descripción */
+    }
+
+    .video-description h3 {
+        margin-bottom: 10px; /* Ajusta el espacio debajo del título */
+    }
+
+    .video-description p {
+        font-size: 14px; /* Reduce el tamaño de la fuente de la descripción */
+    }
+}
+
+/* Estilos para pantallas muy pequeñas (como celulares en modo retrato) */
+@media (max-width: 480px) {
+    .sidebar h2 {
+        font-size: 1.2rem; /* Más pequeño en pantallas aún más pequeñas */
+    }
+
+    .search-box {
+        font-size: 12px; /* Asegura que el tamaño del texto sea adecuado */
+    }
+
+    .content {
+        padding: 10px; /* Reduce aún más el padding */
+    }
+
+    iframe {
+        height: 180px; /* Reduce la altura del video */
+    }
+}
+
