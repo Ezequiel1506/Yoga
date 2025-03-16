@@ -4,116 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clases de Yoga</title>
-    <style>
-        /* Estilos Generales */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            display: flex;
-            background: #f4f4f4;
-        }
-
-        /* Menú lateral */
-        .sidebar {
-            width: 300px;
-            background: #2c3e50;
-            color: white;
-            height: 100vh;
-            padding: 20px;
-            position: fixed;
-            overflow-y: auto;
-        }
-
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /* Estilo del buscador */
-        .search-box {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        /* Estilos del menú */
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            padding: 12px;
-            cursor: pointer;
-            background: #34495e;
-            border-radius: 5px;
-            margin-bottom: 5px;
-            transition: 0.3s;
-        }
-
-        .sidebar ul li:hover {
-            background: #1abc9c;
-        }
-
-        /* Submenús */
-        .submenu {
-            display: none;
-            background: #3b536c;
-            padding-left: 15px;
-            border-left: 3px solid #1abc9c;
-        }
-
-        .submenu li {
-            padding: 8px;
-            cursor: pointer;
-            background: none;
-            border-bottom: none;
-        }
-
-        .submenu li:hover {
-            background: #16a085;
-        }
-
-        /* Contenido */
-        .content {
-            margin-left: 320px;
-            padding: 30px;
-            width: 100%;
-            text-align: center;
-        }
-
-        h1 {
-            color: #2c3e50;
-        }
-
-        p {
-            font-size: 18px;
-        }
-
-        /* Video */
-        .video-container {
-            display: none;
-            margin-top: 20px;
-        }
-
-        iframe {
-            max-width: 640px;
-            width: 100%;
-            height: 360px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -140,13 +31,23 @@
     </div>
 
     <!-- Contenido principal -->
-    <div class="content">
-        <h1>Bienvenido a las Clases de Yoga</h1>
-        <p>Selecciona una postura en el menú o usa el buscador.</p>
-        <div class="video-container" id="videoContainer">
-            <iframe id="videoFrame" src="" allowfullscreen></iframe>
-        </div>
+<!-- Contenido principal -->
+<div class="content">
+    <h1>Bienvenido a las Clases de Yoga</h1>
+    <p>Selecciona una postura en el menú o usa el buscador.</p>
+    
+    <!-- Contenedor del video -->
+    <div class="video-container" id="videoContainer">
+        <iframe id="videoFrame" src="" allowfullscreen></iframe>
     </div>
+
+    <!-- Descripción del video -->
+    <div class="video-description">
+        <h3 id="videoTitle"></h3>
+        <p id="videoDescription"></p>
+    </div>
+</div>
+
 
     <script>
         // Mostrar u ocultar submenús
@@ -157,12 +58,22 @@
 
         // Cambiar el video en el iframe y mostrarlo
         function showVideo(videoID) {
-            let iframe = document.getElementById("videoFrame");
-            let videoContainer = document.getElementById("videoContainer");
+    let iframe = document.getElementById("videoFrame");
+    let videoContainer = document.getElementById("videoContainer");
+    let videoDescription = document.getElementById("videoDescription");
+    let videoTitle = document.getElementById("videoTitle");
 
-            iframe.src = `https://drive.google.com/file/d/${videoID}/preview`;
-            videoContainer.style.display = "block";
-        }
+    // Encuentra el video correspondiente
+    let video = videos.find(v => v.videoID === videoID);
+    
+    // Cambia el iframe
+    iframe.src = `https://drive.google.com/file/d/${videoID}/preview`;
+    videoContainer.style.display = "block";
+
+    // Actualiza la descripción y el título
+    videoTitle.textContent = video.title;
+    videoDescription.textContent = video.description;
+}
 
         // Buscador de posturas mejorado
         function searchPosture() {
