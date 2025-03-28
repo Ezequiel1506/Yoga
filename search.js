@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             window.videos = data;
             generateMenu(data);
-            displayVideos(data);
         });
 });
 
@@ -37,9 +36,11 @@ function generateMenu(videos) {
 function displayVideos(videos) {
     let list = document.getElementById("video-list");
     list.innerHTML = "";
+    list.classList.remove("hidden");
+
     videos.forEach(video => {
         let li = document.createElement("li");
-        li.innerHTML = `<a href="${video.link}" target="_blank">${video.title}</a> - ${video.description}`;
+        li.innerHTML = `<a href="${video.link}" target="_blank">${video.title}</a><p>${video.description}</p>`;
         list.appendChild(li);
     });
 }
@@ -50,5 +51,6 @@ function searchVideos() {
         video.title.toLowerCase().includes(query) || 
         video.description.toLowerCase().includes(query)
     );
+
     displayVideos(filtered);
 }
