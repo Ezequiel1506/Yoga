@@ -15,6 +15,7 @@ body {
 .container {
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 /* Menú lateral */
@@ -27,6 +28,7 @@ body {
     overflow-y: auto;
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
     border-right: 3px solid #aac4b2;
+    transition: width 0.3s ease;
 }
 
 .sidebar h2 {
@@ -66,6 +68,7 @@ body {
     padding: 30px;
     width: 100%;
     text-align: center;
+    flex: 1;
 }
 
 #search {
@@ -118,4 +121,52 @@ body {
 /* Ocultar la lista de videos hasta que se seleccione una fecha */
 .hidden {
     display: none;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        box-shadow: none;
+        border-right: none;
+        padding: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    #video-list {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    #video-list {
+        padding-left: 10px;
+    }
 }
