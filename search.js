@@ -3,9 +3,36 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             window.videos = data;
+            generateMenu(data);
             displayVideos(data);
         });
 });
+
+function generateMenu(videos) {
+    let menu = document.getElementById("class-menu");
+    let groupedVideos = {};
+
+    // Agrupar videos por fecha
+    videos.forEach(video => {
+        if (!groupedVideos[video.date]) {
+            groupedVideos[video.date] = [];
+        }
+        groupedVideos[video.date].push(video);
+    });
+
+    // Crear enlaces en el menú
+    Object.keys(groupedVideos).sort().forEach(date => {
+        let li = document.createElement("li");
+        let a = document.createElement("a");
+        a.href = "#";
+        a.textContent = date;
+        a.onclick = function () {
+            displayVideos(groupedVideos[date]);
+        };
+        li.appendChild(a);
+        menu.appendChild(li);
+    });
+}
 
 function displayVideos(videos) {
     let list = document.getElementById("video-list");

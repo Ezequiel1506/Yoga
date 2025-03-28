@@ -8,11 +8,20 @@
     <script src="search.js" defer></script>
 </head>
 <body>
-    <h1>Clases de Yoga</h1>
-    <input type="text" id="search" placeholder="Buscar por postura o nivel..." onkeyup="searchVideos()">
-    
-    <ul id="video-list">
-        <!-- Aquí se insertarán los videos con JS -->
-    </ul>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Clases</h2>
+            <ul id="class-menu">
+                <!-- Se generará dinámicamente -->
+            </ul>
+        </nav>
+        <main class="content">
+            <h1>Clases de Yoga</h1>
+            <input type="text" id="search" placeholder="Buscar por postura..." onkeyup="searchVideos()">
+            <ul id="video-list">
+                <!-- Videos cargados dinámicamente -->
+            </ul>
+        </main>
+    </div>
 </body>
 </html>

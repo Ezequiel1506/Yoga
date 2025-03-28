@@ -2,11 +2,13 @@
     {
         "title": "Postura del Perro",
         "description": "Clase enfocada en la postura del perro.",
-        "link": "https://drive.google.com/file/d/XXXXXXX/view"
+        "link": "https://drive.google.com/file/d/XXXXXXX/view",
+        "date": "2025-03-25"
     },
     {
         "title": "Saludo al Sol",
         "description": "Secuencia completa del saludo al sol.",
-        "link": "https://drive.google.com/file/d/YYYYYYY/view"
+        "link": "https://drive.google.com/file/d/YYYYYYY/view",
+        "date": "2025-03-27"
     }
 ]
