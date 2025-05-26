@@ -7,6 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
+
+
+
+function parseDate(dateStr) {
+    const meses = {
+        "enero": 0, "febrero": 1, "marzo": 2,
+        "abril": 3, "mayo": 4, "junio": 5,
+        "julio": 6, "agosto": 7, "septiembre": 8,
+        "octubre": 9, "noviembre": 10, "diciembre": 11
+    };
+
+    const [dia, , mesTexto] = dateStr.toLowerCase().split(" ");
+    const mes = meses[mesTexto];
+    return new Date(2025, mes, parseInt(dia)); // Cambiá 2025 si las fechas son de otro año
+}
+
+
 function generateMenu(videos) {
     let menu = document.getElementById("class-menu");
     let groupedVideos = {};
@@ -19,18 +36,20 @@ function generateMenu(videos) {
         groupedVideos[video.date].push(video);
     });
 
-    // Crear enlaces en el menú
-    Object.keys(groupedVideos).sort().forEach(date => {
-        let li = document.createElement("li");
-        let a = document.createElement("a");
-        a.href = "#";
-        a.textContent = date;
-        a.onclick = function () {
-            displayVideos(groupedVideos[date]);
-        };
-        li.appendChild(a);
-        menu.appendChild(li);
-    });
+    // Ordenar las fechas cronológicamente
+    Object.keys(groupedVideos)
+        .sort((a, b) => parseDate(a) - parseDate(b))
+        .forEach(date => {
+            let li = document.createElement("li");
+            let a = document.createElement("a");
+            a.href = "#";
+            a.textContent = date;
+            a.onclick = function () {
+                displayVideos(groupedVideos[date]);
+            };
+            li.appendChild(a);
+            menu.appendChild(li);
+        });
 }
 
 function displayVideos(videos) {
